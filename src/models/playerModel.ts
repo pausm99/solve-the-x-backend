@@ -28,7 +28,7 @@ Player.init(
             type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        width: {
+        weight: {
             type: DataTypes.DECIMAL,
             allowNull: false,
         },
