@@ -22,6 +22,31 @@ export class PlayerController {
             return res.status(500).json({ message: 'Error creating player', error });
         }
     }
+
+    async updatePlayer(req: Request, res: Response): Promise<Response<Player>> {
+        try {
+            const id = req.params.id;
+            const { name, age, position, height, weight } = req.body;
+            
+            const player = await Player.findByPk(id);
+
+            if (!player) {
+                return res.status(404).json({ message: 'Player not found' });
+            }
+
+            player.name = name;
+            player.age = age;
+            player.position = position;
+            player.height = height;
+            player.weight = weight;
+
+            await player.save();
+
+            return res.status(200).json(player);
+        } catch (error) {
+            return res.status(500).json({ message: 'Error updating player', error });
+        }
+    }
     
 }
 
