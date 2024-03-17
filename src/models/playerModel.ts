@@ -1,7 +1,14 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/database';
 
-class Player extends Model {}
+class Player extends Model {
+    declare id: number;
+    declare name: string;
+    declare age: number;
+    declare position: string;
+    declare height: number;
+    declare weight: number;
+}
 
 Player.init(
     {
