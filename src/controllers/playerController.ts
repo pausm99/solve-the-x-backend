@@ -47,6 +47,24 @@ export class PlayerController {
             return res.status(500).json({ message: 'Error updating player', error });
         }
     }
+
+    async deletePlayer(req: Request, res: Response): Promise<Response> {
+        try {
+            const id = req.params.id;
+            
+            const player = await Player.findByPk(id);
+
+            if (!player) {
+                return res.status(404).json({ message: 'Player not found' });
+            }
+
+            await player.destroy();
+
+            return res.status(200).json({ message: "Player deleted successfully"});
+        } catch (error) {
+            return res.status(500).json({ message: 'Error deleting player', error });
+        }
+    }
     
 }
 
