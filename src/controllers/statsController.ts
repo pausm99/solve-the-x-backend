@@ -11,7 +11,8 @@ export async function getStatistics(req: Request, res: Response): Promise<Respon
     }
 }
 
-async function calculateStatistics() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function calculateStatistics(): Promise<any> {
     return new Promise((resolve, reject) => {
         const db = new sqlite3.Database('./db/database.sqlite');
 
