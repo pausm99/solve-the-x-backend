@@ -2,11 +2,20 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import User from '../models/userModel';
 import { generateAuthToken } from '../middleware/authMiddleware';
+import { body, validationResult } from 'express-validator';
 
 
 export class UserController {
 
     async register(req: Request, res: Response): Promise<Response<string>> {
+
+        await validateUser(req);
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         try {
             const { username, password } = req.body;
             
@@ -31,6 +40,14 @@ export class UserController {
     }
 
     async login(req: Request, res: Response): Promise<Response<string>> {
+
+        await validateUser(req);
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         try {
             const { username, password } = req.body;
 
@@ -55,6 +72,11 @@ export class UserController {
         }
     }
     
+}
+
+async function validateUser(req: Request): Promise<void> {
+    await body('username', 'Username is required').notEmpty().isString().run(req);
+    await body('password', 'Password is required').notEmpty().isString().run(req);
 }
 
 export default new UserController();
