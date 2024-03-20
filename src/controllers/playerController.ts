@@ -83,9 +83,9 @@ export class PlayerController {
 }
 
 async function validatePlayer(req: Request): Promise<void> {
-    await body('name', 'Name is required').notEmpty().run(req);
+    await body('name', 'Name is required').notEmpty().isString().run(req);
     await body('age', 'Age is required').notEmpty().isInt().run(req);
-    await body('position', 'Position is required').notEmpty().run(req);
+    await body('position', 'Position is required').notEmpty().isString().run(req);
     await body('height', 'Height is required').notEmpty().isFloat().run(req);
     await body('weight', 'Weight is required').notEmpty().isFloat().run(req);
 }
