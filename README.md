@@ -28,3 +28,7 @@ This backend is built using the following technologies:
 - Node.js
 - Express.js
 - SQLite with Sequelize
+
+### Author
+
+- [Pau Sàbat Martí](https://github.com/pausm99)
