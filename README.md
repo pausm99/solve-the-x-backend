@@ -10,8 +10,7 @@ To get the backend up and running, follow these simple steps:
 1. Clone this repository.
 2. Rename the `.env.template` file to `.env` and add your secret key.
 3. Install dependencies using `npm install`.
-4. Set up your database credentials in the appropriate configuration file.
-5. Run the server using `npm run dev`.
+4. Run the server using `npm run dev`.
 
 Now you're ready to start using the API!
 
