@@ -8,7 +8,7 @@ Welcome to the Football Players API Backend! This API allows you to perform CRUD
 To get the backend up and running, follow these simple steps:
 
 1. Clone this repository.
-2. Rename the `.env.template` file to `.env` and add your secret key.
+2. Rename the `.env.template` file to `.env` and add a random secret key (used to sing with jsonwebtoken).
 3. Install dependencies using `npm install`.
 4. Run the server using `npm run dev`.
 
