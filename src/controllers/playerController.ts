@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { body, validationResult } from 'express-validator';
 import Player from '../models/playerModel';
 
 export class PlayerController {
@@ -14,6 +15,13 @@ export class PlayerController {
     }
 
     async createPlayer(req: Request, res: Response): Promise<Response<Player>> {
+        await validatePlayer(req);
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         try {
             const { name, age, position, height, weight } = req.body;
             const newPlayer = await Player.create({ name, age, position, height, weight });
@@ -24,6 +32,13 @@ export class PlayerController {
     }
 
     async updatePlayer(req: Request, res: Response): Promise<Response<Player>> {
+        await validatePlayer(req);
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        
         try {
             const id = req.params.id;
             const { name, age, position, height, weight } = req.body;
@@ -65,7 +80,14 @@ export class PlayerController {
             return res.status(500).json({ message: 'Error deleting player', error });
         }
     }
-    
+}
+
+async function validatePlayer(req: Request): Promise<void> {
+    await body('name', 'Name is required').notEmpty().run(req);
+    await body('age', 'Age is required').notEmpty().isInt().run(req);
+    await body('position', 'Position is required').notEmpty().run(req);
+    await body('height', 'Height is required').notEmpty().isFloat().run(req);
+    await body('weight', 'Weight is required').notEmpty().isFloat().run(req);
 }
 
 export default new PlayerController();
