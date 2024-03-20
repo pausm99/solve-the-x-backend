@@ -1,0 +1,2018 @@
+{
+	"info": {
+		"_postman_id": "fcb97e72-baa2-417f-b5cc-dd4b041b1f66",
+		"name": "Solve the X backend API",
+		"description": "This collection consists of two sections: \"Users\" and \"Players\" The \"Users\" section contains requests for user authentication, registration, and login functionalities, allowing users to access the system securely. The \"Players\" section includes requests for creating, reading, updating, and deleting player information within the system, facilitating efficient player management. This collection serves as a comprehensive toolkit for managing both users and player data in the application.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21558732"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"userTest\",\n    \"password\": \"password1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						},
+						"description": "This request allows new users to create an account within the system. This endpoint is used for user registration and requires users to provide essential information such as username and password. Upon successful registration, the system generates a unique identifier for the user, enabling them to access the system's functionalities."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"userTest\",\n    \"password\": \"password1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 10:33:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\"\n}"
+						},
+						{
+							"name": "No body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/users/register",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "340"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"154-fHLSQsXwj08oR0K42D/WBSTekRQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:03:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Username is required\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Username is required\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Password is required\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Password is required\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Log in",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"userTest\",\n    \"password\": \"password1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						},
+						"description": "This request is used to authenticate a user and obtain an access token, which should be included in the Authorization response header, for accessing protected resources."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"userTest\",\n    \"password\": \"password1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-8NyYuX6xHCq4cqTGOfV4FIW9uJ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 10:45:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged successfully\"\n}"
+						},
+						{
+							"name": "User not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"userTest3\",\n    \"password\": \"password1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 10:53:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not found\"\n}"
+						},
+						{
+							"name": "No body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "340"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"154-fHLSQsXwj08oR0K42D/WBSTekRQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:06:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Username is required\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Username is required\",\n            \"path\": \"username\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Password is required\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Password is required\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Invalid credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"userTest\",\n    \"password\": \"incorrectPassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:07:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid credentials\"\n}"
+						}
+					]
+				}
+			],
+			"description": "The \"users\" folder contains routes that allow users to interact with the API to authenticate and utilize it properly. These routes are essential for user management within the system."
+		},
+		{
+			"name": "Players",
+			"item": [
+				{
+					"name": "Get players",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/players",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"players"
+							]
+						},
+						"description": "This request is get all players stored in database."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/players",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "626"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"272-F5wrrGFjFbdemHMmedUxzRGH5HI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:28:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Lionel Messi\",\n        \"age\": 36,\n        \"position\": \"Forward\",\n        \"height\": 170,\n        \"weight\": 65\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Frenkie de Jong\",\n        \"age\": 26,\n        \"position\": \"Midfieler\",\n        \"height\": 181,\n        \"weight\": 82\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Robert Lewandoski\",\n        \"age\": 35,\n        \"position\": \"Forward\",\n        \"height\": 188,\n        \"weight\": 90\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Vitor Roque\",\n        \"age\": 18,\n        \"position\": \"Forward\",\n        \"height\": 183,\n        \"weight\": 74\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Marc-André Ter Stegen\",\n        \"age\": 32,\n        \"position\": \"Goalkeeper\",\n        \"height\": 193,\n        \"weight\": 86\n    },\n    {\n        \"id\": 6,\n        \"name\": \"João Félix\",\n        \"age\": 25,\n        \"position\": \"Forward\",\n        \"height\": 179,\n        \"weight\": 75\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Pau Cubarsí\",\n        \"age\": 18,\n        \"position\": \"Defender\",\n        \"height\": 184,\n        \"weight\": 83\n    }\n]"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/players",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-ap7jSbRkz0SEVx28kc1hnUryL9Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:34:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized, token not provided\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/players",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-w4O8U+0Ll+sSArmfAX18RvhWpiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:11:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gerard Piqué\",\n    \"age\": 35,\n    \"position\": \"Defender\",\n    \"height\": 188,\n    \"weight\": 87\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/players",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"players"
+							]
+						},
+						"description": "This request creates a player in database with the provided data."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Neymar Jr.\",\n    \"age\": 32,\n    \"position\": \"Forward\",\n    \"height\": 174,\n    \"weight\": 63\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/players",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-gx8SsG1mvGQOBUQqxMUXIEfw0/M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:37:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"name\": \"Neymar Jr.\",\n    \"age\": 32,\n    \"position\": \"Forward\",\n    \"height\": 174,\n    \"weight\": 63\n}"
+						},
+						{
+							"name": "No body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmIkMTAkeWJZeWo1TEg0UjZaWEtZQi5qa2RyZXFhVE9SUDN0TEFDQXNHNlRtbUNlZGlVSEJmN0RtaWUiLCJpYXQiOjE3MTA5NDAzNDgsImV4cCI6MTcxMDk0NzU0OH0.sNJRb-AKmo5dmvSe1veRoOFtMH5Sz1tcbFfpt3skr4U",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "780"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30c-CvjY1Y/NZ/FIqkPNC72/lYE2TWE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:12:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Age is required\",\n            \"path\": \"age\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Age is required\",\n            \"path\": \"age\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Position is required\",\n            \"path\": \"position\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Position is required\",\n            \"path\": \"position\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Height is required\",\n            \"path\": \"height\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Height is required\",\n            \"path\": \"height\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Weight is required\",\n            \"path\": \"weight\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Weight is required\",\n            \"path\": \"weight\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-ap7jSbRkz0SEVx28kc1hnUryL9Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:43:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized, token not provided\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-w4O8U+0Ll+sSArmfAX18RvhWpiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:11:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete player",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/players/:id",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"players",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						},
+						"description": "This request deletes a player from database based on the provided player id."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/players/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players",
+										":id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-rN+FhIuwbQOLkhQK647iA1cnf/0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:47:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Player deleted successfully\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-xiROapB1iHUIpxpMV5Bhg3yOd9c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:54:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Player not found\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-ap7jSbRkz0SEVx28kc1hnUryL9Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 11:58:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized, token not provided\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-w4O8U+0Ll+sSArmfAX18RvhWpiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:14:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid token\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update player",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/players/:id",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"players",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						},
+						"description": "This request updates a player from database based on the provided player id and player data."
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/players/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-BMrNZJAzBB2RVFXURSznhyySK4M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:13:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-xiROapB1iHUIpxpMV5Bhg3yOd9c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:14:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Player not found\"\n}"
+						},
+						{
+							"name": "No body",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmIkMTAkeWJZeWo1TEg0UjZaWEtZQi5qa2RyZXFhVE9SUDN0TEFDQXNHNlRtbUNlZGlVSEJmN0RtaWUiLCJpYXQiOjE3MTA5NDAzNDgsImV4cCI6MTcxMDk0NzU0OH0.sNJRb-AKmo5dmvSe1veRoOFtMH5Sz1tcbFfpt3skr4U",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "780"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30c-CvjY1Y/NZ/FIqkPNC72/lYE2TWE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:17:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Age is required\",\n            \"path\": \"age\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Age is required\",\n            \"path\": \"age\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Position is required\",\n            \"path\": \"position\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Position is required\",\n            \"path\": \"position\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Height is required\",\n            \"path\": \"height\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Height is required\",\n            \"path\": \"height\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Weight is required\",\n            \"path\": \"weight\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"msg\": \"Weight is required\",\n            \"path\": \"weight\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-ap7jSbRkz0SEVx28kc1hnUryL9Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:14:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized, token not provided\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 6,\n    \"name\": \"João Félix\",\n    \"age\": 24,\n    \"position\": \"Midfieler\",\n    \"height\": 179,\n    \"weight\": 75\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/players/:id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:5173"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-w4O8U+0Ll+sSArmfAX18RvhWpiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 13:16:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid token\"\n}"
+						}
+					]
+				}
+			],
+			"description": "The \"players\" folder contains routes related to player management within the system. All of these requests are protected, meaning they require authentication using an access token obtained from the Login request. These routes enable users to perform various actions related to players, such as creating, updating, retrieving, and deleting player information."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJUZXN0IiwicGFzc3dvcmQiOiIkMmIkMTAkNmVrMkJqZUlOVHdsVzYueVh3dVUzLnZyemliUVhDWHZEbnBrMlVETXczLzN3ZDk0d1pLbDYiLCJpYXQiOjE3MTA5MzE1MjEsImV4cCI6MTcxMDkzODcyMX0.jwSZ15spgPKxFNKK-Oefbf9Z4-ankQ0CFXUt6Fo_4Mw"
+		}
+	]
+}
